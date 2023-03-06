@@ -1,18 +1,22 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * print_diagsums - prints the sum of the two
+ * diagonals of a square matrix of integers
+ * @a: input pointer.
+ * @size: size of the matrix
+ * Return: no return.
  */
-int main(void)
+void print_diagsums(int *a, int size)
 {
-	char *s = "wworld of this";
-	char *f = "world";
-	char *t;
+	int i, sum1 = 0, sum2 = 0;
 
-	t = _strstr(s, f);
-	printf("%s\n", t);
-	return (0);
+	for (i = 0; i < (size * size); i++)
+	{
+		if (i % (size + 1) == 0)
+			sum1 += *(a + i);
+		if (i % (size - 1) == 0 && i != 0 && i < size * size - 1)
+			sum2 += *(a + i);
+	}
+	printf("%d, %d\n", sum1, sum2);
 }
