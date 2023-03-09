@@ -1,17 +1,15 @@
 #include "main.h"
+
 /**
- * _memcpy - copies memory area,
- * @dest: destination memory area.
- * @src: source memory area.
- * @n: bytes filled.
- * Return: the pointer to dest.
+ * _print_rev_recursion - prints a string in reverse.
+ * @s: string
+ * Return: no return.
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+void _print_rev_recursion(char *s)
 {
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
-		*(dest + i) =  *(src + i);
-
-	return (dest);
+	if (*s != '\0')
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
+	}
 }
